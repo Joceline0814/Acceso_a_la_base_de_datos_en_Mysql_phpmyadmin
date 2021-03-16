@@ -1,0 +1,29 @@
+create database grupo_3;
+
+CREATE TABLE insumo
+(
+codigo_insumo int( 10 ) ,
+nombre varchar( 30 ) ,
+descripcion varchar( 30 ) ,
+cantidad decimal( 10,2 ) ,
+PRIMARY KEY ( codigo_insumo ) 
+);
+
+
+CREATE TABLE ingreso
+(
+codigo_ingreso int( 10 ) ,
+codigo_insumo1 int( 10 ) ,
+cantidad decimal( 10,2 ) ,
+PRIMARY KEY ( codigo_ingreso ) ,
+FOREIGN KEY ( codigo_insumo1 ) REFERENCES insumo( codigo_insumo) 
+);
+
+CREATE TABLE egreso
+(
+codigo_egreso int( 10 ) ,
+codigo_insumo2 int( 10 ) ,
+cantidad decimal( 10,2 ) ,
+PRIMARY KEY ( codigo_egreso ) ,
+FOREIGN KEY ( codigo_insumo2 ) REFERENCES insumo( codigo_insumo) 
+);
